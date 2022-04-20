@@ -1,0 +1,146 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='robots', content='noindex, nofollow')
+    title CV &ndash; Kocharin Alexander
+  body
+    mixin header(title, url)
+      .header
+        a(href=url)= title
+    article
+      .line
+        section.s-head
+          h1.title Alexander Kocharin
+          .subtitle Software Engineer
+        section.s-contact
+          .contact
+            span.icon.icon-github-squared
+            a(href='https://github.com/rlidwka') github.com/rlidwka
+          .contact
+            span.icon.icon-mail-squared
+            a(href='mailto:alex@kocharin.ru') alex@kocharin.ru
+      .line
+        section.s-subtitle
+          .subtitle-line-1
+            .text Full-Stack Developer, Node.js
+            .sticker &longleftarrow; wouldn't mind changing things up
+          .subtitle-line-2 (10+ years of experience, since release v0.4)
+      .line
+        section.s-want
+          h2.title Want:
+          ul
+            li algorithmically hard tasks (AI, GameDev, V8 internals, or something to think about)
+            li contributing to and maintaining opensource projects (if you have any)
+      .line
+        section.s-block
+          h2.title Previous work:
+          .s-content
+            +header('Nodeca / rcopen.com', 'https://rcopen.com')
+            .header-date 2014 - 2022
+            .item-title what is it:
+            .item-desc forum engine, similar to Discourse
+            .item-title role:
+            .item-desc main developer
+            .text Code is used on russian aeromodeling website. Forum engine written from scratch, backed up by primarily Node.js/MongoDB/Redis.
+            .text There were 3-5 people involved in the project, I wrote most of the server- and client-side code, as well as Docker deployment scripts.
+            .text Demonstrated great proficiency at finding solutions for the problems that wouldn't have existed in the first place if we used PostgreSQL.
+
+            +header('Fontello / fontello.com', 'https://fontello.com')
+            .header-date 2014 - 2022
+            .item-title what is it:
+            .item-desc popular tool for creating icon fonts
+            .item-title role:
+            .item-desc maintainer
+            .text Single-page app with LevelDB as storage.
+            .text I did a lot of font-related stuff and Bézier curve maths. You can see results as npm packages such as
+              = ' '
+              a(href='https://github.com/fontello/svg2ttf') svg2ttf
+              = ' and '
+              a(href='https://github.com/fontello/cubic2quad') cubic2quad
+              = '.'
+
+      .line
+        section.s-block
+          h2.title Opensource projects:
+          .s-content
+            +header('node.js', 'https://github.com/nodejs/node')
+            .header-date 2012 - 2016
+            .item-title role:
+            .item-desc was involved in core development around v0.8 - v0.16, ex-maintainer
+
+            +header('markdown-it', 'https://github.com/markdown-it/markdown-it')
+            .header-date 2014 - 2022
+            .item-title role:
+            .item-desc I wrote that entire thing
+            .item-title used in:
+            .item-desc StackOverflow, Discourse
+             
+            +header('js-yaml', 'https://github.com/nodeca/js-yaml')
+            .header-date 2014 - 2022
+            .item-title role:
+            .item-desc maintainer
+            .item-title used in:
+            .item-desc everywhere, 52 million weekly downloads
+
+            +header('argparse', 'https://github.com/nodeca/argparse')
+            .header-date 2020 - 2021
+            .item-title role:
+            .item-desc author of v2 port from python
+            .item-title used in:
+            .item-desc everywhere, 47 million weekly downloads
+
+            em.text.text-full + dozens of smaller projects, please check
+              = ' '
+              a(href='https://github.com/rlidwka') github
+              = '.'
+
+      .line
+        section.s-block
+          h2.title Education:
+          .s-content
+            +header('Kurgan State University', 'http://www.kgsu.ru/en')
+            .header-date 2007 - 2012
+            .item-title degree:
+            .item-desc Specialist in Engineering
+            .item-title speciality:
+            .item-desc Computer Software and Automated Systems
+
+            .header Participated in:
+            ul
+              li math olympiads (multiple top3's on local level)
+              li programming olympiads (Pascal/C++, multiple top3's on local level)
+              li cybersec competitions (2nd place in RuCTF 2011)
+              li chess at ~1500 ELO (challenges welcome)
+
+      .line
+        section.s-block
+          h2.title
+            = 'Relevant '
+            s= 'buzzwords'
+            = ' skills'
+          .tech.s-content
+            mixin t-header(title)
+              .header= title + ':'
+
+            mixin t-item(title, desc, suffix)
+              .item-title= title + ':'
+              .item-desc
+                = desc
+                if suffix
+                  = ' '
+                  em= suffix
+
+            +t-header('Languages')
+            +t-item('Web', 'JS/CSS/HTML/WASM, stuff that compiles to it', '(Pug, SCSS, a bit of Coffee and TS)')
+            +t-item('Non-Web', 'Python/Perl, C/C++, Rust', '(strictly better than C++, plz change my mind)')
+
+            +t-header('Frameworks')
+            +t-item('UI', 'Twitter\'s Bootstrap')
+            +t-item('Reactive', 'D3, Knockout, React, Vue', '(no angular yet)')
+            +t-item('Server', 'Express/Koa', '(was part of their dev team earlier)')
+
+            +t-header('Other')
+            +t-item('DBMS', 'MySQL/Postgres, Redis, MongoDB, LevelDB', '(want to learn Neo4j)')
+            +t-item('Virt', 'Docker w/docker-compose, LXC')
+            +t-item('OS', 'Linux', '(lots and lots of it)')
