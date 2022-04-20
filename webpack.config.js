@@ -1,5 +1,9 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin'
 import MiniCssExtractPlugin from 'mini-css-extract-plugin'
+import { dirname } from 'path'
+import { fileURLToPath } from 'url'
+
+const __dirname = dirname(fileURLToPath(import.meta.url))
 
 export default (env) => ({
   mode: env.WEBPACK_SERVE ? 'development' : 'production',
@@ -25,6 +29,9 @@ export default (env) => ({
         use: [ MiniCssExtractPlugin.loader, 'css-loader', 'stylus-loader' ]
       }
     ]
+  },
+  output: {
+    path: __dirname + '/docs'
   },
   devServer: {
     watchFiles: {
